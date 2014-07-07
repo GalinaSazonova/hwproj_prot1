@@ -1,0 +1,13 @@
+<h1>Users</h1>
+
+<% if @users.empty? %>
+  <%= "No users yet." %>
+<% end %>
+
+<ul>
+  <% for user in @users %>
+  	<il> <%= gravatar_for(user, size: 24) %>
+  	  <b> <%= link_to user.name, user %> </b> <%= user.email %> <br>
+  	</il>
+  <% end %>
+</ul>

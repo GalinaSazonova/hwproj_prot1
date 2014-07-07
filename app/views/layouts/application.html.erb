@@ -1,14 +1,20 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Hwproj</title>
+  <title>hwproj <%= yield(:title) %> </title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
 
-<%= yield %>
+<%= render 'layouts/header' %>
 
+<% flash.each do |key, value| %>
+  <i><h3> <%= value %> </h3></i>
+<% end %>
+
+<%= yield %>
+<%= debug(params) if Rails.env.development? %>
 </body>
 </html>

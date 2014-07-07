@@ -1,9 +1,9 @@
 <h1>Задачи</h1>
 
-<% @tasks.each do |t| %>
+<%= link_to 'Добавить задачу', new_task_path %> <br>
 
-	<%= t.id %>
-	<%= t.problem %>
-	<br>
-
-<% end %>
+<ol>
+  <% @tasks.each do |t| %>
+    <li> <%= t.problem %> </li>
+  <% end %>
+</ol>
